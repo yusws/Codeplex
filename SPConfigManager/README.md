@@ -11,3 +11,5 @@ When you're developing, you can just add a reference to the .dll in your project
 There is a usage example detailed in the readme.rtf. There is also an example feature receiver class in the source code. Example
 
 This solution was created using the Smart Template addin for Visual Studio 2008 (smarttemplates.codeplex.com)
+
+## sync from github
