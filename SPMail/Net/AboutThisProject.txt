@@ -1,0 +1,7 @@
+﻿The Net project and Net.dll come from an open source project on www.codeproject.com called NetPopMimeClient.
+Get it and learn more about it here:
+http://www.codeproject.com/KB/IP/NetPopMimeClient.aspx
+
+I've added the full code directly to this solution because some users were getting 
+errors inside the Net.dll code and it was difficult for them to debug it as a seperate project.
+

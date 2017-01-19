@@ -1,0 +1,6 @@
+@ECHO OFF
+SET STSADM="C:\Program Files\Common Files\Microsoft Shared\web server extensions\12\BIN\stsadm"
+ECHO Adding solution ...
+%STSADM% -o addsolution -f WebConfigManager.wsp
+ECHO Deploying solutions ...
+%STSADM% -o deploysolution -n WebConfigManager.wsp -local -url http://localhost

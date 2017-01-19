@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MyLocalBroadband.WSSPictureUploader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WSSPictureUploader_Imaging_WS_Imaging" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com/_vti_bin/Imaging.asmx</Value>
+    </Setting>
+    <Setting Name="WSSPictureUploader_Authentication_WS_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com/_vti_bin/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="UserDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*user*</Value>
+    </Setting>
+    <Setting Name="SiteDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="LibraryDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">photos</Value>
+    </Setting>
+    <Setting Name="PasswordDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*password*</Value>
+    </Setting>
+    <Setting Name="FolderDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*folder*</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

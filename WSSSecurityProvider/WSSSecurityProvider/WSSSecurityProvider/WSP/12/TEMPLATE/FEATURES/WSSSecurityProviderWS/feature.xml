@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+    Id="{239E7086-41C3-478b-B224-90019E7487A1}"
+    Title="My Local Broadband LLC - Security Provider Web Services"
+    Description="Add web services to support the My Local Broadband WSS Security Provider.  Activate this feature in the Central Administration web application."
+    Scope="WebApplication"
+	  ReceiverAssembly="MyLocalBroadband.WSSSecurityProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af1a525c93de384c"
+	  ReceiverClass="MyLocalBroadband.WSSSecurityProvider.WebServices.SecProviderWSFeatureReceiver"
+         >
+</Feature>

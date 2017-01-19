@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mylocalbroadband.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.mylocalbroadband.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mylocalbroadband.com/">
+      <s:element name="hstCreateSite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webAppURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLCID" type="s:unsignedInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerLogin1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerName1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerEmail1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerLogin2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerName2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerEmail2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hhMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hstCreateSiteResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="hstCreateSiteSoapIn">
+    <wsdl:part name="parameters" element="tns:hstCreateSite" />
+  </wsdl:message>
+  <wsdl:message name="hstCreateSiteSoapOut">
+    <wsdl:part name="parameters" element="tns:hstCreateSiteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SharePointServiceSoap">
+    <wsdl:operation name="hstCreateSite">
+      <wsdl:input message="tns:hstCreateSiteSoapIn" />
+      <wsdl:output message="tns:hstCreateSiteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SharePointServiceSoap" type="tns:SharePointServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="hstCreateSite">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/hstCreateSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SharePointServiceSoap12" type="tns:SharePointServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="hstCreateSite">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/hstCreateSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SharePointService">
+    <wsdl:port name="SharePointServiceSoap" binding="tns:SharePointServiceSoap">
+      <soap:address location="http://localhost:8080/_vti_adm/HostingSharePointSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SharePointServiceSoap12" binding="tns:SharePointServiceSoap12">
+      <soap12:address location="http://localhost:8080/_vti_adm/HostingSharePointSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

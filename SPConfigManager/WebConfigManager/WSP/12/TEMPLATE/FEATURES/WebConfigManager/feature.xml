@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+    Id="{a4e6893b-4a30-4cc6-92d2-1614d0cf22de}"
+    Title="WebConfigManager"
+    Description="Class Library to assist with making modificaitons to the web.config."
+    Scope="Farm"
+         >
+</Feature>

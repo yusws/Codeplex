@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mylocalbroadband.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.mylocalbroadband.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mylocalbroadband.com/">
+      <s:element name="CreateNewSiteNewSQLOwner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiteUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PwdQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PwdAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WebAppUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProviderName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLCID" type="s:unsignedInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewSiteNewSQLOwnerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateNewSiteExistingSQLOwner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SiteUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WebAppUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProviderName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLCID" type="s:unsignedInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewSiteExistingSQLOwnerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateDNS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDNSResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DNSExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNSExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DNSExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateNewSiteNewSQLOwnerSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewSiteNewSQLOwner" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewSiteNewSQLOwnerSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewSiteNewSQLOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewSiteExistingSQLOwnerSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewSiteExistingSQLOwner" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewSiteExistingSQLOwnerSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewSiteExistingSQLOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDNSSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDNS" />
+  </wsdl:message>
+  <wsdl:message name="CreateDNSSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDNSResponse" />
+  </wsdl:message>
+  <wsdl:message name="DNSExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:DNSExists" />
+  </wsdl:message>
+  <wsdl:message name="DNSExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:DNSExistsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HostingToolsSoap">
+    <wsdl:operation name="CreateNewSiteNewSQLOwner">
+      <wsdl:input message="tns:CreateNewSiteNewSQLOwnerSoapIn" />
+      <wsdl:output message="tns:CreateNewSiteNewSQLOwnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewSiteExistingSQLOwner">
+      <wsdl:input message="tns:CreateNewSiteExistingSQLOwnerSoapIn" />
+      <wsdl:output message="tns:CreateNewSiteExistingSQLOwnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDNS">
+      <wsdl:input message="tns:CreateDNSSoapIn" />
+      <wsdl:output message="tns:CreateDNSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DNSExists">
+      <wsdl:input message="tns:DNSExistsSoapIn" />
+      <wsdl:output message="tns:DNSExistsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HostingToolsSoap" type="tns:HostingToolsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewSiteNewSQLOwner">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/CreateNewSiteNewSQLOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewSiteExistingSQLOwner">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/CreateNewSiteExistingSQLOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDNS">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/CreateDNS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNSExists">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/DNSExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HostingToolsSoap12" type="tns:HostingToolsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewSiteNewSQLOwner">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/CreateNewSiteNewSQLOwner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewSiteExistingSQLOwner">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/CreateNewSiteExistingSQLOwner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDNS">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/CreateDNS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DNSExists">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/DNSExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HostingTools">
+    <wsdl:port name="HostingToolsSoap" binding="tns:HostingToolsSoap">
+      <soap:address location="http://localhost:8080/_vti_adm/HostingToolsSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HostingToolsSoap12" binding="tns:HostingToolsSoap12">
+      <soap12:address location="http://localhost:8080/_vti_adm/HostingToolsSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

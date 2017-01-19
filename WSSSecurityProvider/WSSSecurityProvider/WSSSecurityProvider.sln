@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSSSecurityProvider", "WSSSecurityProvider\WSSSecurityProvider.csproj", "{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSSSecurityManagementClient", "WSSSecurityManagementClient\WSSSecurityManagementClient.csproj", "{A7D10F3B-754A-48A4-AC3E-530E7E14BE27}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs02.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WSSSecurityManagementClient\\WSSSecurityManagementClient.csproj
+		SccProjectName1 = WSSSecurityManagementClient
+		SccLocalPath1 = WSSSecurityManagementClient
+		SccProjectUniqueName2 = WSSSecurityProvider\\WSSSecurityProvider.csproj
+		SccProjectName2 = WSSSecurityProvider
+		SccLocalPath2 = WSSSecurityProvider
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D10F3B-754A-48A4-AC3E-530E7E14BE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D10F3B-754A-48A4-AC3E-530E7E14BE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D10F3B-754A-48A4-AC3E-530E7E14BE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D10F3B-754A-48A4-AC3E-530E7E14BE27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

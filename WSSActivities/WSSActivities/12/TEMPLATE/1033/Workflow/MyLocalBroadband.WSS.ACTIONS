@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowInfo Language="en-en">
+  <Actions Sequential="then" Parallel="and">
+	  <Action Name="Create a Site Collection"
+		ClassName="MyLocalBroadband.Activities.WSS.CreateSiteCollection"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Create Site Collection. Web Application URL: %1; Site URL: %2; Site Title: %3; Description: %4; Template: %5; LCID: %6; Primary Owner:(%7; %8; %9); Secondary Owner:(%10; %11; %12); Isolate in new content database: %13, named %14; Store new site URL in %15">
+			  <FieldBind Field="WebAppURL" Text="WebApp URL" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="SiteURL" Text="Site URL" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="SiteTitle" Text="Site Title" Id="3" DesignerType="TextArea" />
+			  <FieldBind Field="SiteDescription" Text="Description" Id="4" DesignerType="TextArea" />
+			  <FieldBind Field="TemplateID" Text="TemplateID" Id="5" DesignerType="TextArea" />
+			  <FieldBind Field="LCID" DesignerType="TextArea" Id="6"/>
+			  <FieldBind Field="PrimaryOwnerLogin" Text="User Login" Id="7" DesignerType="TextArea" />
+			  <FieldBind Field="PrimaryOwnerDisplayName" Text="Display Name" Id="8" DesignerType="TextArea" />
+			  <FieldBind Field="PrimaryOwnerEmail" Text="Email" Id="9" DesignerType="TextArea" />
+			  <FieldBind Field="SecondaryOwnerLogin" Text="User Login" Id="10" DesignerType="TextArea" />
+			  <FieldBind Field="SecondaryOwnerDisplayName" Text="Display Name" Id="11" DesignerType="TextArea" />
+			  <FieldBind Field="SecondaryOwnerEmail" Text="Email" Id="12" DesignerType="TextArea" />
+			  <FieldBind Field="IsolateInNewContentDB" Text="Isolate in new Content Database" Id="13" DesignerType="System.Boolean" />
+			  <FieldBind Field="DBServer" Text="DB Server" Id="14" DesignerType="TextArea" />
+			  <FieldBind Field="NewContentDBName" Text="New DB Name" Id="15" DesignerType="TextArea" />
+			  <FieldBind Field="Result" Text="Result" Id="16" DesignerType="parameterNames" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="WebAppURL" Type="System.String, mscorlib" Direction="Optional" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="SiteTitle" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="SiteDescription" Type="System.String, mscorlib" Direction="Optional" />
+			  <Parameter Name="TemplateID" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="LCID" Type="System.UInt32, mscorlib" Direction="In" InitialValue="1033" />
+			  <Parameter Name="PrimaryOwnerLogin" Type="System.String, mscorlib" Direction="In"/>
+			  <Parameter Name="PrimaryOwnerDisplayName" Type="System.String, mscorlib" Direction="In"/>
+			  <Parameter Name="PrimaryOwnerEmail" Type="System.String, mscorlib" Direction="In"/>
+			  <Parameter Name="SecondaryOwnerLogin" Type="System.String, mscorlib" Direction="Optional"/>
+			  <Parameter Name="SecondaryOwnerDisplayName" Type="System.String, mscorlib" Direction="Optional"/>
+			  <Parameter Name="SecondaryOwnerEmail" Type="System.String, mscorlib" Direction="Optional"/>
+			  <Parameter Name="IsolateInNewContentDB" Type="System.Boolean, mscorlib" Direction="In" InitialValue="false" />
+			  <Parameter Name="DBServer" Type="System.String, mscorlib" Direction="Optional"/>
+			  <Parameter Name="NewContentDBName" Type="System.String, mscorlib" Direction="Optional"/>
+			  <Parameter Name="Result"  Type="System.String, mscorlib" Direction="Optional" />
+		  </Parameters>
+	  </Action>
+    <Action Name="Create a SubSite"
+      ClassName="MyLocalBroadband.Activities.WSS.CreateSubSite"
+      Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+      AppliesTo="all"
+      UsesCurrentItem="true"
+      Category="Site Management Actions">
+      <RuleDesigner Sentence="Create Subsite. Site URL: %1; Site Title: %2; Description: %3; Template: %4; LCID: %5; Use Unique Permissions: %6; Convert if Exists: %7; Store new site URL in %8">
+        <FieldBind Field="SiteURL" Text="Site URL" Id="1" DesignerType="TextArea" />
+        <FieldBind Field="SiteTitle" Text="Site Title" Id="2" DesignerType="TextArea" />
+        <FieldBind Field="SiteDescription" Text="Description" Id="3" DesignerType="TextArea" />
+        <FieldBind Field="TemplateID" Text="TemplateID" Id="4" DesignerType="TextArea" />
+		<FieldBind Field="LCID" DesignerType="TextArea" Id="5"/>
+        <FieldBind Field="UseUniquePermissions" Text="Use Unique Permissions" Id="6" DesignerType="System.Boolean" />
+		<FieldBind Field="ConvertIfExists" Text="Convert If Exists" Id="7" DesignerType="System.Boolean" />
+        <FieldBind Field="Result" Text="Result" Id="8" DesignerType="parameterNames" />
+      </RuleDesigner>
+      <Parameters>
+		<Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+		<Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+		<Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+		<Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="SiteTitle" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="SiteDescription" Type="System.String, mscorlib" Direction="Optional" />
+        <Parameter Name="TemplateID" Type="System.String, mscorlib" Direction="In" />
+		<Parameter Name="LCID" Type="System.UInt32, mscorlib" Direction="In" InitialValue="1033" />
+        <Parameter Name="UseUniquePermissions" Type="System.Boolean, mscorlib" Direction="In" />
+		<Parameter Name="ConvertIfExists" Type="System.Boolean, mscorlib" Direction="In" InitialValue="false" />
+        <Parameter Name="Result"  Type="System.String, mscorlib" Direction="Optional" />
+      </Parameters>
+    </Action>
+	  <Action Name="Lookup Site Template ID"
+		ClassName="MyLocalBroadband.Activities.WSS.LookupTemplateID"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Lookup Template Named %1 with LCID %2 and place the Template ID in %3">
+			  <FieldBind Field="TemplateName" Text="Template Name" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="LCID" DesignerType="TextArea" Id="2"/>
+			  <FieldBind Field="TemplateID" Text="TemplateID" Id="3" DesignerType="parameterNames" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="TemplateName" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="LCID" Type="System.UInt32, mscorlib" Direction="In" InitialValue="1033" />
+			  <Parameter Name="TemplateID"  Type="System.String, mscorlib" Direction="Optional" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Site Title"
+		ClassName="MyLocalBroadband.Activities.WSS.SetSiteTitle"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Set Site Title. Site URL: %1 ; New Title: %2">
+			  <FieldBind Field="SiteURL" Text="Site URL" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="NewTitle" Text="New Title" Id="2" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="NewTitle"  Type="System.String, mscorlib" Direction="In" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Site Theme"
+		ClassName="MyLocalBroadband.Activities.WSS.SetSiteTheme"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Set Site Theme. Site URL: %1 ; New Theme: %2">
+			  <FieldBind Field="SiteURL" Text="Site URL" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="NewTheme" Text="New Theme" Id="2" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="NewTheme"  Type="System.String, mscorlib" Direction="In" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Create Site Group"
+		ClassName="MyLocalBroadband.Activities.WSS.CreateSiteGroup"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Create Site Group. Group Name: %1 ; Description: %2 ; Owner: %3 ; Members: %4; WebURL %5">
+			  <FieldBind Field="GroupName" Text="Group Name" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="GroupDescription" Text="Description" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="GroupOwner" Text="Owner" Id="3" DesignerType="TextArea" />
+			  <FieldBind Field="GroupMembers" Text="Members" Id="4" DesignerType="TextArea" />
+			  <FieldBind Field="WebURL" Text="Web URL" Id="5" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="GroupName" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="GroupDescription" Type="System.String, mscorlib" Direction="Optional" />
+			  <Parameter Name="GroupOwner"  Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="GroupMembers"  Type="System.String, mscorlib" Direction="Optional" />
+			  <Parameter Name="WebURL"  Type="System.String, mscorlib" Direction="Optional" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Setup Site Group"
+		ClassName="MyLocalBroadband.Activities.WSS.SetupSiteGroup"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Setup Site Group. In Web, %1, set Site Group, %2 as role %3. Clear Quick Launch Groups %4 ; Clear Inherited Permissions: %5.">
+			  <FieldBind Field="WebURL" Text="Web Url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="SiteGroupName" Text="Site Group Name" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="Role" DesignerType="Dropdown" Text="Choose Role" Id="3">
+				  <Option Name="Visitors" Value="visitor"/>
+				  <Option Name="Members" Value="member"/>
+				  <Option Name="Owners" Value="owner"/>
+			  </FieldBind>
+			  <FieldBind Field="ClearQuickLaunchGroups" Text="Clear Quick Launch Groups" Id="4" DesignerType="System.Boolean" />
+			  <FieldBind Field="ClearInheritedPermissions" Text="Clear Inherited Permissions" Id="5" DesignerType="System.Boolean" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="WebURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="SiteGroupName" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="Role"  Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="ClearQuickLaunchGroups" Type="System.Boolean, mscorlib" Direction="In" InitialValue="false" />
+			  <Parameter Name="ClearInheritedPermissions" Type="System.Boolean, mscorlib" Direction="In" InitialValue="false" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Available Templates"
+		ClassName="MyLocalBroadband.Activities.WSS.SetAvailableTemplates"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Set Available Templates. Web URL: %1 ; TemplateIDs: %2 ; LCID: %3">
+			  <FieldBind Field="WebURL" Text="Web URL" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="TemplateIDs" Text="TemplateIDs" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="LCID" DesignerType="TextArea" Id="3"/>
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="WebURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="TemplateIDs"  Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="LCID" Type="System.UInt32, mscorlib" Direction="In" InitialValue="1033" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Publish Item and Link to Another Location"
+		ClassName="MyLocalBroadband.Activities.WSS.PublishItem"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Item Management Actions">
+		  <RuleDesigner Sentence="Publish %1 to these lists %2.">
+			  <FieldBind Field="ListID,ListItemID" Text="this item" Id="1" DesignerType="ChooseListItem" />
+			  <FieldBind Field="DestinationListUrl" Text="list urls" Id="2" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="ListID" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="ListItemID" Type="System.Int32, mscorlib" Direction="In"  />
+			  <Parameter Name="DestinationListUrl" Type="System.String, mscorlib" Direction="In"  />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Copy Item To Another Location"
+		ClassName="MyLocalBroadband.Activities.WSS.CopyItem"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Item Management Actions">
+		  <RuleDesigner Sentence="Copy %1 to %2 and store the resulting ID in %3.">
+			  <FieldBind Field="ListID,ListItemID" Text="this item" Id="1" DesignerType="ChooseListItem" />
+			  <FieldBind Field="DestinationListUrl" Text="list url" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="Result" DesignerType="ParameterNames" Text="variable" Id="3"/>
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="ListID" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="ListItemID" Type="System.Int32, mscorlib" Direction="In"  />
+			  <Parameter Name="DestinationListUrl" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="Result" Type="System.Int32, mscorlib" Direction="Optional"  />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Delete Remote Item"
+		ClassName="MyLocalBroadband.Activities.WSS.DeleteItem"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Item Management Actions">
+		  <RuleDesigner Sentence="Delete item with ID, %1, from list %2.">
+			  <FieldBind Field="ItemID" Text="item ID" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="ListURL" Text="list url" Id="2" DesignerType="TextArea" />
+		</RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="ItemID" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="ListURL" Type="System.String, mscorlib" Direction="In"  />
+		</Parameters>
+	  </Action>
+	  <Action Name="Update Remote Copy"
+		ClassName="MyLocalBroadband.Activities.WSS.UpdateItem"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Item Management Actions">
+		  <RuleDesigner Sentence="Update item in %1 with id= %2 with data from %3.">
+			  <FieldBind Field="DestinationListURL" Text="list url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="DestinationItemID" Text="item ID" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="SourceListID,SourceListItemID" Text="this item" Id="3" DesignerType="ChooseListItem" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="DestinationListURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="DestinationItemID" Type="System.Double, mscorlib" Direction="In"  />
+			  <Parameter Name="SourceListID" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="SourceListItemID" Type="System.Int32, mscorlib" Direction="In"  />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Activate a Feature"
+		ClassName="MyLocalBroadband.Activities.WSS.ActivateFeature"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Activate the %1 feature named %2 in site %3.">
+			  <FieldBind Field="FeatureScope" DesignerType="Dropdown" Text="choose feature scope" Id="1">
+				  <Option Name="Web" Value="Web"/>
+				  <Option Name="SiteCollection" Value="Site"/>
+			  </FieldBind>
+			  <FieldBind Field="FeatureTitle" Text="enter feature title" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="WebURL" Text="web url" Id="3" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="FeatureScope" Type="System.String, mscorlib" InitialValue="Web"  Direction="In" />
+			  <Parameter Name="FeatureTitle" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="WebURL" Type="System.String, mscorlib" Direction="In" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Site Masterpage"
+		ClassName="MyLocalBroadband.Activities.WSS.SetMasterPage"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="In Site %1 set the primary masterpage to %2 the custom (system) master page to %3 and the alternate .css to %4.">
+			  <FieldBind Field="WebURL" Text="web url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="MasterUrl" Text="MasterUrl" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="CustomMasterUrl" Text="CustomMasterUrl" Id="3" DesignerType="TextArea" />
+			  <FieldBind Field="AlternateCssUrl" Text="AlternateCssUrl" Id="4" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="WebURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="MasterUrl" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="CustomMasterUrl" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="AlternateCssUrl" Type="System.String, mscorlib" Direction="Optional" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Portal Link"
+		ClassName="MyLocalBroadband.Activities.WSS.SetPortalLink"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="Link Site %1 to portal titled %2 with url %3.">
+			  <FieldBind Field="SiteURL" Text="site url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="PortalTitle" Text="portal title" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="PortalURL" Text="portal url" Id="3" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="PortalTitle" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="PortalURL" Type="System.String, mscorlib" Direction="In" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Set Site Property"
+		ClassName="MyLocalBroadband.Activities.WSS.SetSiteProperty"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="In Site %1 set property key %2 to value %3.">
+			  <FieldBind Field="SiteURL" Text="site url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="Key" Text="key" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="Value" Text="value" Id="3" DesignerType="TextArea" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="Key" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="Value" Type="System.String, mscorlib" Direction="In" />
+		  </Parameters>
+	  </Action>
+	  <Action Name="Get Site Property"
+		ClassName="MyLocalBroadband.Activities.WSS.GetSiteProperty"
+		Assembly="MyLocalBroadband.Activities.WSS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a2621e188d62293e"
+		AppliesTo="all"
+		UsesCurrentItem="true"
+		Category="Site Management Actions">
+		  <RuleDesigner Sentence="In site %1 retrieve key %2 and store value in %3.">
+			  <FieldBind Field="SiteURL" Text="site url" Id="1" DesignerType="TextArea" />
+			  <FieldBind Field="Key" Text="key" Id="2" DesignerType="TextArea" />
+			  <FieldBind Field="Value" Text="value" Id="3" DesignerType="parameterNames" />
+		  </RuleDesigner>
+		  <Parameters>
+			  <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+			  <Parameter Name="__ListId" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="__ListItem" Type="System.Int32, mscorlib" Direction="In" />
+			  <Parameter Name="SiteURL" Type="System.String, mscorlib" Direction="In" />
+			  <Parameter Name="Key" Type="System.String, mscorlib" Direction="In"  />
+			  <Parameter Name="Value" Type="System.String, mscorlib" Direction="Optional" />
+		  </Parameters>
+	  </Action>
+  </Actions>
+</WorkflowInfo>

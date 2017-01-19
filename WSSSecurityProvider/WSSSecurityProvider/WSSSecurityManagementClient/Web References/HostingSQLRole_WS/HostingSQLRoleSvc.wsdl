@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mylocalbroadband.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.mylocalbroadband.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mylocalbroadband.com/">
+      <s:element name="AddUsersToRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddUsersToRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUsersToRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUsersToRolesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUserToRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUserToRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToRolesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoleExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoleExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RoleExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRolesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindUsersInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernameToMatch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindUsersInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindUsersInRoleResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesForUserResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInRoleResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserInRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUserFromRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromRolesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUsersFromRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUsersFromRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUsersFromRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MappedApplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="usernames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUsersFromRolesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateSiteMapping">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiteMappingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteMapping">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteMappingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteMappingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUsersToRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUsersToRole" />
+  </wsdl:message>
+  <wsdl:message name="AddUsersToRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUsersToRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUsersToRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUsersToRoles" />
+  </wsdl:message>
+  <wsdl:message name="AddUsersToRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUsersToRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToRole" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToRoles" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleExists" />
+  </wsdl:message>
+  <wsdl:message name="RoleExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateRole" />
+  </wsdl:message>
+  <wsdl:message name="CreateRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindUsersInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:FindUsersInRole" />
+  </wsdl:message>
+  <wsdl:message name="FindUsersInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:FindUsersInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRolesForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInRole" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserInRole" />
+  </wsdl:message>
+  <wsdl:message name="IsUserInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRole" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRoles" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUsersFromRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRole" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUsersFromRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUsersFromRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRoles" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUsersFromRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiteMappingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiteMapping" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiteMappingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiteMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteMappingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteMapping" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteMappingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteMappingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SQLRoleServiceSoap">
+    <wsdl:operation name="AddUsersToRole">
+      <wsdl:input message="tns:AddUsersToRoleSoapIn" />
+      <wsdl:output message="tns:AddUsersToRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoles">
+      <wsdl:input message="tns:AddUsersToRolesSoapIn" />
+      <wsdl:output message="tns:AddUsersToRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRole">
+      <wsdl:input message="tns:AddUserToRoleSoapIn" />
+      <wsdl:output message="tns:AddUserToRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRoles">
+      <wsdl:input message="tns:AddUserToRolesSoapIn" />
+      <wsdl:output message="tns:AddUserToRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleExists">
+      <wsdl:input message="tns:RoleExistsSoapIn" />
+      <wsdl:output message="tns:RoleExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <wsdl:input message="tns:GetAllRolesSoapIn" />
+      <wsdl:output message="tns:GetAllRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRole">
+      <wsdl:input message="tns:CreateRoleSoapIn" />
+      <wsdl:output message="tns:CreateRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input message="tns:DeleteRoleSoapIn" />
+      <wsdl:output message="tns:DeleteRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRole">
+      <wsdl:input message="tns:FindUsersInRoleSoapIn" />
+      <wsdl:output message="tns:FindUsersInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <wsdl:input message="tns:GetRolesForUserSoapIn" />
+      <wsdl:output message="tns:GetRolesForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRole">
+      <wsdl:input message="tns:GetUsersInRoleSoapIn" />
+      <wsdl:output message="tns:GetUsersInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <wsdl:input message="tns:IsUserInRoleSoapIn" />
+      <wsdl:output message="tns:IsUserInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRole">
+      <wsdl:input message="tns:RemoveUserFromRoleSoapIn" />
+      <wsdl:output message="tns:RemoveUserFromRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRoles">
+      <wsdl:input message="tns:RemoveUserFromRolesSoapIn" />
+      <wsdl:output message="tns:RemoveUserFromRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRole">
+      <wsdl:input message="tns:RemoveUsersFromRoleSoapIn" />
+      <wsdl:output message="tns:RemoveUsersFromRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoles">
+      <wsdl:input message="tns:RemoveUsersFromRolesSoapIn" />
+      <wsdl:output message="tns:RemoveUsersFromRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiteMapping">
+      <wsdl:input message="tns:CreateSiteMappingSoapIn" />
+      <wsdl:output message="tns:CreateSiteMappingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapping">
+      <wsdl:input message="tns:GetSiteMappingSoapIn" />
+      <wsdl:output message="tns:GetSiteMappingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SQLRoleServiceSoap" type="tns:SQLRoleServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUsersToRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/AddUsersToRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoles">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/AddUsersToRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/AddUserToRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRoles">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/AddUserToRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleExists">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/RoleExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/CreateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/FindUsersInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/GetUsersInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/IsUserInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/RemoveUserFromRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRoles">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/RemoveUserFromRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRole">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/RemoveUsersFromRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoles">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/RemoveUsersFromRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiteMapping">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/CreateSiteMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapping">
+      <soap:operation soapAction="http://www.mylocalbroadband.com/GetSiteMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SQLRoleServiceSoap12" type="tns:SQLRoleServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUsersToRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/AddUsersToRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoles">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/AddUsersToRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/AddUserToRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRoles">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/AddUserToRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleExists">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/RoleExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/CreateRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/FindUsersInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/GetUsersInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/IsUserInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/RemoveUserFromRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRoles">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/RemoveUserFromRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRole">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/RemoveUsersFromRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoles">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/RemoveUsersFromRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiteMapping">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/CreateSiteMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteMapping">
+      <soap12:operation soapAction="http://www.mylocalbroadband.com/GetSiteMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SQLRoleService">
+    <wsdl:port name="SQLRoleServiceSoap" binding="tns:SQLRoleServiceSoap">
+      <soap:address location="http://localhost:8080/_vti_adm/HostingSQLRoleSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SQLRoleServiceSoap12" binding="tns:SQLRoleServiceSoap12">
+      <soap12:address location="http://localhost:8080/_vti_adm/HostingSQLRoleSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

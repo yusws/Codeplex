@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMail", "SPMail\SPMail.csproj", "{B1CDA220-38BA-4491-A2F9-6C5890B5AB0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net", "Net\Net.csproj", "{BDCF1507-C999-4775-90C3-4D9CB4C9F951}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs10.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Net\\Net.csproj
+		SccProjectName1 = Net
+		SccLocalPath1 = Net
+		SccProjectUniqueName2 = SPMail\\SPMail.csproj
+		SccProjectName2 = SPMail
+		SccLocalPath2 = SPMail
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1CDA220-38BA-4491-A2F9-6C5890B5AB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1CDA220-38BA-4491-A2F9-6C5890B5AB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1CDA220-38BA-4491-A2F9-6C5890B5AB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1CDA220-38BA-4491-A2F9-6C5890B5AB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCF1507-C999-4775-90C3-4D9CB4C9F951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCF1507-C999-4775-90C3-4D9CB4C9F951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCF1507-C999-4775-90C3-4D9CB4C9F951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCF1507-C999-4775-90C3-4D9CB4C9F951}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

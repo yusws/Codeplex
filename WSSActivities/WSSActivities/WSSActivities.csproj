@@ -1,0 +1,209 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD140DA0-4A2E-4E4B-A3C3-A2B9429ABAC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MyLocalBroadband.Activities.WSS</RootNamespace>
+    <AssemblyName>MyLocalBroadband.Activities.WSS</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WSSActivities.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="microsoft.sharepoint.WorkflowActions, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="MyLocalBroadband.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71fd9881423f23bf, processorArchitecture=MSIL" />
+    <Reference Include="MyLocalBroadband.WebConfigManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f75e77f79f89990, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.WorkflowServices">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivateFeature.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActivateFeature.Designer.cs">
+      <DependentUpon>ActivateFeature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttachmentHelper.cs" />
+    <Compile Include="ColumnHelper.cs" />
+    <Compile Include="CopyItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CopyItem.Designer.cs">
+      <DependentUpon>CopyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSiteCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateSiteCollection.Designer.cs">
+      <DependentUpon>CreateSiteCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSiteGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateSiteGroup.Designer.cs">
+      <DependentUpon>CreateSiteGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSubSite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateSubSite.Designer.cs">
+      <DependentUpon>CreateSubSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeleteItem.Designer.cs">
+      <DependentUpon>DeleteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureCode\WSSActivities.cs" />
+    <Compile Include="GetSiteProperty.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GetSiteProperty.Designer.cs">
+      <DependentUpon>GetSiteProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCopier.cs" />
+    <Compile Include="ListHelper.cs" />
+    <Compile Include="LookupTemplateID.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LookupTemplateID.Designer.cs">
+      <DependentUpon>LookupTemplateID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="12\TEMPLATE\1033\Workflow\MyLocalBroadband.WSS.ACTIONS" />
+    <None Include="Deploy\EULA.rtf" />
+    <None Include="Deploy\Setup.exe.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WSSActivities.snk" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PublishedCopyDeleteReceiver.cs" />
+    <Compile Include="PublishedOriginalDeletedReceiver.cs" />
+    <Compile Include="PublishedOriginalUpdatedReceiver.cs" />
+    <Compile Include="PublishItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PublishItem.Designer.cs">
+      <DependentUpon>PublishItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetAvailableTemplates.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetAvailableTemplates.Designer.cs">
+      <DependentUpon>SetAvailableTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetMasterPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetMasterPage.Designer.cs">
+      <DependentUpon>SetMasterPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetPortalLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetPortalLink.Designer.cs">
+      <DependentUpon>SetPortalLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetSiteProperty.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetSiteProperty.Designer.cs">
+      <DependentUpon>SetSiteProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetSiteTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetSiteTheme.Designer.cs">
+      <DependentUpon>SetSiteTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetSiteTitle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetSiteTitle.Designer.cs">
+      <DependentUpon>SetSiteTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupSiteGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetupSiteGroup.Designer.cs">
+      <DependentUpon>SetupSiteGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UpdateItem.Designer.cs">
+      <DependentUpon>UpdateItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowHistoryLogger.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="12\TEMPLATE\FEATURES\WSSActivities\elements.xml" />
+    <Content Include="12\TEMPLATE\FEATURES\WSSActivities\feature.xml" />
+    <Content Include="ExternalReferences\MyLocalBroadband.Logging.dll" />
+    <Content Include="ExternalReferences\MyLocalBroadband.Logging.pdb" />
+    <Content Include="ExternalReferences\MyLocalBroadband.WebConfigManager.dll" />
+    <Content Include="ExternalReferences\MyLocalBroadband.WebConfigManager.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Windows Workflow Foundation\v3.5\Workflow.Targets" />
+</Project>

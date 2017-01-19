@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+    Id="{4e26f629-73f3-4b31-af99-89a9ebe9da71}"
+    Title="My Local Broadband Logging"
+    Description="Class Library for logging."
+    Scope="Farm"
+         >
+</Feature>

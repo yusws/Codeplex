@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" Class="MyLocalBroadband.WSSSecurityProvider.WebServices.SharePointService, MyLocalBroadband.WSSSecurityProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af1a525c93de384c" %>

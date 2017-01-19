@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Java", "Java\Java.csproj", "{9C288287-F20C-4262-AE30-B95C2EF58D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL", "SQL\SQL.csproj", "{ECAD160C-4436-41F6-A2AC-EA3FDA31A375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerShell", "PowerShell\PowerShell.csproj", "{AC296345-E420-4454-B586-9D6B71106B0B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs02.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Java\\Java.csproj
+		SccProjectName1 = Java
+		SccLocalPath1 = Java
+		SccProjectUniqueName2 = SQL\\SQL.csproj
+		SccProjectName2 = SQL
+		SccLocalPath2 = SQL
+		SccProjectUniqueName3 = PowerShell\\PowerShell.csproj
+		SccProjectName3 = PowerShell
+		SccLocalPath3 = PowerShell
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C288287-F20C-4262-AE30-B95C2EF58D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C288287-F20C-4262-AE30-B95C2EF58D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C288287-F20C-4262-AE30-B95C2EF58D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C288287-F20C-4262-AE30-B95C2EF58D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAD160C-4436-41F6-A2AC-EA3FDA31A375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAD160C-4436-41F6-A2AC-EA3FDA31A375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAD160C-4436-41F6-A2AC-EA3FDA31A375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAD160C-4436-41F6-A2AC-EA3FDA31A375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC296345-E420-4454-B586-9D6B71106B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC296345-E420-4454-B586-9D6B71106B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC296345-E420-4454-B586-9D6B71106B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC296345-E420-4454-B586-9D6B71106B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

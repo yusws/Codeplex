@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CBC9A6C-91BD-49C5-BA80-8BDBFC9C5293}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyLocalBroadband.WSSSecurityProvider</RootNamespace>
+    <AssemblyName>MyLocalBroadband.WSSSecurityProvider</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WSSSecurityProvider.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="MyLocalBroadband.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71fd9881423f23bf, processorArchitecture=MSIL" />
+    <Reference Include="MyLocalBroadband.WebConfigManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f75e77f79f89990, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code_Provider\SecProviderFeatureReceiver.cs" />
+    <Compile Include="Code_Provider\SqlSiteMembershipProvider.cs" />
+    <Compile Include="Code_Provider\SqlSiteRoleProvider.cs" />
+    <Compile Include="Code_WebService\HostingToolsWS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code_WebService\SecProviderWSFeatureReceiver.cs" />
+    <Compile Include="Code_WebService\SharePointWS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code_WebService\SQLMembershipWS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code_WebService\SQLRoleWS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WSP\redeploy.bat" />
+    <None Include="WSP\undeploywsp.bat" />
+    <None Include="WSP\createwsp.bat" />
+    <None Include="WSP\deploywsp.bat" />
+    <None Include="WSP\WSPBuilder\WSPBuilder.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="ExternalReference\MyLocalBroadband.Logging.dll" />
+    <Content Include="ExternalReference\MyLocalBroadband.WebConfigManager.dll" />
+    <Content Include="WSP\12\ADMISAPI\HostingSharePointSvc.asmx" />
+    <Content Include="WSP\12\ADMISAPI\HostingSQLMembershipSvc.asmx" />
+    <Content Include="WSP\12\ADMISAPI\HostingSQLRoleSvc.asmx" />
+    <Content Include="WSP\12\ADMISAPI\HostingToolsSvc.asmx" />
+    <Content Include="WSP\12\TEMPLATE\FEATURES\WSSSecurityProviderWS\feature.xml" />
+    <Content Include="WSP\12\TEMPLATE\FEATURES\WSSSecurityProvider\feature.xml" />
+    <Content Include="WSP\WSPBuilder\CabLib.dll" />
+    <Content Include="WSP\WSPBuilder\License.txt" />
+    <Content Include="WSP\WSPBuilder\Manual.txt" />
+    <Content Include="WSP\WSPBuilder\Readme.txt" />
+    <Content Include="WSP\WSPBuilder\WSPBuilder.exe" />
+    <Content Include="WSP\WSPBuilder\WSPDeploy.exe" />
+    <Content Include="WSP\WSPBuilder\WSPDeploy.Lib.dll" />
+    <Content Include="WSP\WSPBuilder\x86.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Setup\Example.docx" />
+    <None Include="Setup\Step1-DatabaseSetup.docx" />
+    <None Include="Setup\EULA.rtf" />
+    <None Include="Setup\ProviderDatabaseSetup.bat" />
+    <None Include="Setup\readme.html" />
+    <None Include="Setup\Setup.exe" />
+    <None Include="Setup\Setup.exe.config" />
+    <None Include="Setup\Sitemaps.sql" />
+    <None Include="Setup\Step2-Solution Install.docx" />
+    <None Include="WSSSecurityProvider.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WSP\12\TEMPLATE\IMAGES\" />
+    <Folder Include="WSP\12\TEMPLATE\LAYOUTS\" />
+    <Folder Include="WSP\80\BIN\" />
+    <Folder Include="WSP\GAC\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>CD $(ProjectDir)\WSP
+createwsp.bat
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

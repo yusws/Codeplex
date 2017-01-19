@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+    Id="{97e52fe3-15e6-4a2b-bc53-1e5483d40e8d}"
+    Title="My Local Broadband LLC - WSS Security Provider"
+    Description="Add support for SQL security providers to web applications using the WSS Hosting Model."
+    Scope="WebApplication"
+	  ReceiverAssembly="MyLocalBroadband.WSSSecurityProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af1a525c93de384c"
+	  ReceiverClass="MyLocalBroadband.WSSSecurityProvider.SecProviderFeatureReceiver"
+         >
+</Feature>

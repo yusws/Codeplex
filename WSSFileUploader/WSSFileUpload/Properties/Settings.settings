@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WSSFileUpload.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WSSFileUpload_Authentication_ws_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com/_vti_bin/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="WSSFileUpload_Copy_ws_Copy" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com/_vti_bin/Copy.asmx</Value>
+    </Setting>
+    <Setting Name="UserNameDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">testUser</Value>
+    </Setting>
+    <Setting Name="PasswordDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">!testuser!</Value>
+    </Setting>
+    <Setting Name="SiteURLDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.mylocalbroadband.com/customers</Value>
+    </Setting>
+    <Setting Name="LibraryDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Shared%20Documents</Value>
+    </Setting>
+    <Setting Name="FilesDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\logs\log.txt;C:\logs\log1.txt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MyLocalBroadband.WSSSecurityManagement.Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MyLocalBroadband_WSSSecurityManagement_Client_HostingTools_WS_HostingTools" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/_vti_adm/HostingToolsSvc.asmx</Value>
+    </Setting>
+    <Setting Name="MyLocalBroadband_WSSSecurityManagement_Client_HostingSharePoint_WS_SharePointService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/_vti_adm/HostingSharePointSvc.asmx</Value>
+    </Setting>
+    <Setting Name="MyLocalBroadband_WSSSecurityManagement_Client_HostingSQLMembership_WS_SQLMembershipService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/_vti_adm/HostingSQLMembershipSvc.asmx</Value>
+    </Setting>
+    <Setting Name="MyLocalBroadband_WSSSecurityManagement_Client_HostingSQLRole_WS_SQLRoleService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/_vti_adm/HostingSQLRoleSvc.asmx</Value>
+    </Setting>
+    <Setting Name="CentralAdminURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080</Value>
+    </Setting>
+    <Setting Name="DNSURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dev.mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="DNSIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="NewSite_SiteURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://dev.mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="NewSite_SiteTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Dev Site</Value>
+    </Setting>
+    <Setting Name="NewSite_SiteDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">My Local Broadband LLC Dev Site</Value>
+    </Setting>
+    <Setting Name="NewSite_SiteTemplate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">STS#0</Value>
+    </Setting>
+    <Setting Name="NewSite_LCID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1033</Value>
+    </Setting>
+    <Setting Name="NewSite_WebApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dev.mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="NewSite_WebApplicationURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://MLBDevSearch</Value>
+    </Setting>
+    <Setting Name="NewSite_MembershipProviderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SecMembershipProvider</Value>
+    </Setting>
+    <Setting Name="NewSite_OwnerLogin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rmiller@mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="NewSite_OwnerFirstName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ryan</Value>
+    </Setting>
+    <Setting Name="NewSite_OwnerLastName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Miller</Value>
+    </Setting>
+    <Setting Name="NewSite_OwnerEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rmiller@mylocalbroadband.com</Value>
+    </Setting>
+    <Setting Name="NewSite_OwnerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">passw0rd#</Value>
+    </Setting>
+    <Setting Name="NewSite_PasswordQuestion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">q</Value>
+    </Setting>
+    <Setting Name="NewSite_PasswordAnswer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">a</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
